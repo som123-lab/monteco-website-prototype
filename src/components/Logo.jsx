@@ -1,0 +1,1 @@
+import React from 'react';import {Link} from 'react-router-dom';export default function Logo({light=false}){return <Link to="/" aria-label="MONTECO home" className={`brand ${light?'brand-light':''}`}><span className="brand-mark">M</span><span className="brand-word">MONTECO<span className="brand-period">.</span></span></Link>}

@@ -1,0 +1,7 @@
+
+import React from 'react';import {Link} from 'react-router-dom';import {ArrowUpRight,ArrowRight} from 'lucide-react';
+export function Eyebrow({children}){return <div className="eyebrow"><span/> {children}</div>}
+export function SectionHeading({eyebrow,title,copy,light=false}){return <div className={`section-heading ${light?'light':''}`}><Eyebrow>{eyebrow}</Eyebrow><h2>{title}</h2>{copy&&<p>{copy}</p>}</div>}
+export function CTA({title='The next step starts with a conversation.',copy='Tell us where you are heading. We will bring the right experience to the table.'}){return <section className="cta-band"><div className="container cta-inner"><div><Eyebrow>Start a conversation</Eyebrow><h2>{title}</h2><p>{copy}</p></div><Link to="/contact" className="button button-light">Talk to MONTECO <ArrowUpRight size={17}/></Link></div></section>}
+export function CapabilityGrid({items}){return <div className="capability-grid">{items.map((x,i)=><Link to={x.to||'/contact'} className="capability-item" key={x.title}><span className="item-no">{x.n||String(i+1).padStart(2,'0')}</span><h3>{x.title}</h3><p>{x.desc}</p><span className="item-arrow"><ArrowUpRight size={18}/></span></Link>)}</div>}
+export function PageHero({eyebrow,title,copy,tag}){return <section className="page-hero"><div className="container page-hero-inner"><Eyebrow>{eyebrow}</Eyebrow><h1>{title}</h1>{copy&&<p className="hero-copy">{copy}</p>}{tag&&<span className="hero-tag">{tag}</span>}</div></section>}
